@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Merry Christmas ❤️</title>
+
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+html, body {
+  height: 100%;
+  overflow-x: hidden;
+}
+
+/* PASSWORD SCREEN */
+#lock {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(135deg, #ff6f91, #ff9671);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  color: white;
+  text-align: center;
+}
+
+.lock-box {
+  background: rgba(0,0,0,0.35);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+  animation: pop 0.6s ease;
+}
+
+.lock-box h1 {
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+}
+
+.lock-box input {
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  font-size: 1rem;
+  width: 220px;
+  text-align: center;
+}
+
+.lock-box button {
+  margin-top: 15px;
+  padding: 12px 25px;
+  border-radius: 25px;
+  border: none;
+  background: #fff;
+  color: #ff6f91;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.lock-box button:hover {
+  transform: scale(1.05);
+}
+
+@keyframes pop {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+/* HERO */
+.hero {
+  height: 100vh;
+  background: url('images/bg.webp') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  padding: 20px;
+  position: relative;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  background: rgba(0,0,0,0.45);
+  padding: 25px 35px;
+  border-radius: 20px;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* FAQ */
+.faq {
+  max-width: 1000px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+.faq h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 2.4rem;
+}
+
+.faq-item {
+  margin-bottom: 25px;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  transition: transform 0.2s ease;
+}
+
+.faq-item:hover {
+  transform: scale(1.02);
+}
+
+.faq-toggle {
+  display: none;
+}
+
+.faq-question {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  background: linear-gradient(135deg, #fbc2eb, #a6c1ee);
+}
+
+.faq-question img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+}
+
+.faq-question span {
+  padding: 20px;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  background: white;
+  transition: max-height 0.5s ease;
+  padding: 0 20px;
+}
+
+.faq-answer p {
+  padding: 20px 0;
+  line-height: 1.6;
+  font-size: 1.05rem;
+}
+
+.faq-toggle:checked + .faq-question + .faq-answer {
+  max-height: 300px;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 40px 20px;
+  background: #111;
+  color: white;
+  margin-top: 60px;
+}
+
+/* SNOW */
+.snowflake {
+  position: fixed;
+  top: -10px;
+  color: white;
+  user-select: none;
+  pointer-events: none;
+  animation: fall linear infinite;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(110vh);
+  }
+}
+
+@media (max-width: 600px) {
+  .hero h1 { font-size: 2rem; }
+  .faq-question { flex-direction: column; text-align: center; }
+  .faq-question img { width: 100%; height: 200px; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- PASSWORD -->
+<div id="lock">
+  <div class="lock-box">
+    <h1>🎁 Secret Christmas Gift</h1>
+    <p>Enter the magic word ✨</p><br>
+    <input type="password" id="password" placeholder="Password" />
+    <br>
+    <button onclick="unlock()">Open 🎄</button>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <h1>Merry Christmas 🎄<br>This is just for you ❤️</h1>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+  <h2>Little Moments 💕</h2>
+
+  <div class="faq-item">
+    <input type="checkbox" id="faq1" class="faq-toggle">
+    <label for="faq1" class="faq-question">
+      <img src="images/liv1.jpeg">
+      <span>Do you remember this day? 😊</span>
+    </label>
+    <div class="faq-answer">
+      <p>This was one of my favorite moments with you.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <input type="checkbox" id="faq2" class="faq-toggle">
+    <label for="faq2" class="faq-question">
+      <img src="images/jesse1.png">
+      <span>Why this picture matters 💖</span>
+    </label>
+    <div class="faq-answer">
+      <p>This picture reminds me how lucky I am.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <input type="checkbox" id="faq3" class="faq-toggle">
+    <label for="faq3" class="faq-question">
+      <img src="images/liv3.jpeg">
+      <span>A little secret 🎁</span>
+    </label>
+    <div class="faq-answer">
+      <p>No matter where we go, I want more memories with you.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  Made with ❤️ — Christmas 2025
+</footer>
+
+<script>
+/* PASSWORD */
+const PASSWORD = "christmas2025";
+
+function unlock() {
+  const input = document.getElementById("password").value;
+  if (input === PASSWORD) {
+    document.getElementById("lock").style.display = "none";
+  } else {
+    alert("❄️ Wrong password ❄️");
+  }
+}
+
+/* SNOW */
+function createSnowflake() {
+  const snowflake = document.createElement("div");
+  snowflake.className = "snowflake";
+  snowflake.textContent = "❄";
+  snowflake.style.left = Math.random() * window.innerWidth + "px";
+  snowflake.style.opacity = Math.random();
+  snowflake.style.fontSize = Math.random() * 10 + 15 + "px";
+  snowflake.style.animationDuration = Math.random() * 5 + 5 + "s";
+  document.body.appendChild(snowflake);
+
+  setTimeout(() => snowflake.remove(), 10000);
+}
+
+setInterval(createSnowflake, 200);
+</script>
+
+</body>
+</html>
